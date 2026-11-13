@@ -1,0 +1,6 @@
+Tool: Icarus Verilog 12.0
+Entry: language/run.sh (IVERILOG and VVP point to a user-directory installation)
+s=ff: whole=-1 slice=255 recast=-1
+s=80: whole=-128 slice=128 recast=-128
+PASS part-select signedness
+part_select_tb.sv:20: $finish called at 2000 (1ps)

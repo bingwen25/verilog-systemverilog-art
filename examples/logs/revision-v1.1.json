@@ -1,0 +1,32 @@
+{
+  "version": "v1.1",
+  "functional_simulation": [
+    "timer",
+    "fifo depths 1/3/4",
+    "axi4lite_csr",
+    "part-select signedness",
+    "add4 latency-aligned, 238 transactions"
+  ],
+  "generic_synthesis": {
+    "tool": "Yosys 0.71 b4c586fd3",
+    "command": "read_verilog -sv <file>; synth -noabc -top <module>; stat",
+    "baseline": {
+      "sequential": 33,
+      "combinational": 526,
+      "total": 559
+    },
+    "pipeline": {
+      "sequential": 98,
+      "combinational": 660,
+      "total": 758
+    }
+  },
+  "not_run": [
+    "target-library area",
+    "STA/Fmax",
+    "power estimation",
+    "formal equivalence",
+    "SVA property execution"
+  ],
+  "source_ledger": "REVISION_v1.1_SHA256SUMS"
+}

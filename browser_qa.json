@@ -1,0 +1,10 @@
+{
+  "status": "blocked",
+  "attempted_engine": "Chromium via Playwright, local HTML only",
+  "reason": "Browser process failed to start: process_singleton socket() returned Operation not permitted.",
+  "completed_alternative": "Static HTML parser checks equation subscript markup, explicit IDs, TOC targets, and no raw LaTex.",
+  "not_claimed": [
+    "browser screenshots",
+    "viewport layout or click execution"
+  ]
+}

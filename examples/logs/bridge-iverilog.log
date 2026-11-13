@@ -1,0 +1,4 @@
+axi4lite_csr.sv:67: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+axi4lite_csr.sv:67: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+PASS: bounded AXI4-Lite CSR scenarios completed
+tb_axi4lite_csr.sv:186: $finish called at 1440000 (1ps)

@@ -1,0 +1,13 @@
+# Tool acquisition in this environment (Icarus 12.0-2+b1, Debian snapshot)
+cd tools/iverilog/debs && curl -L --fail -o iverilog.deb 'https://snapshot.debian.org/archive/debian/20261103T013555Z/pool/main/i/iverilog/iverilog_12.0-2%2Bb1_amd64.deb'
+cd tools/iverilog/debs && dpkg-deb -x iverilog.deb ../root
+python3 -m pip install --target tools/yowasp yowasp-yosys
+
+# Full rerun command used; Yosys package was removed after the run to avoid vendoring a large runtime.
+PYTHONPATH=tools/yowasp YOSYS=tools/yowasp/bin/yowasp-yosys ./run.sh
+
+# Commands executed by run.sh (generic synthesis, no technology library or ABC mapping)
+iverilog -Btools/iverilog/root/usr/lib/x86_64-linux-gnu/ivl/ -g2012 -Wall -s tb_add4 -o build/tb_add4.vvp add4_baseline.sv add4_pipeline.sv tb_add4.sv
+vvp build/tb_add4.vvp
+yowasp-yosys -p 'read_verilog -sv add4_baseline.sv; synth -noabc -top add4_baseline; stat'
+yowasp-yosys -p 'read_verilog -sv add4_pipeline.sv; synth -noabc -top add4_pipeline; stat'

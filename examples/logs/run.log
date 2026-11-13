@@ -1,0 +1,6 @@
+PASS timer directed cases
+PASS fifo depth=1 sent=628 received=628
+PASS fifo depth=3 sent=948 received=948
+PASS fifo depth=4 sent=979 received=979
+PASS all examples
+tb.sv:223: $finish called at 18096000 (1ps)

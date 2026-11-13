@@ -1,0 +1,2 @@
+PASS add4 transactions=238 baseline_latency=1 pipeline_latency=2 extra_latency=1
+tb_add4.sv:95: $finish called at 3100000 (1ps)
